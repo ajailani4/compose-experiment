@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.ajailani.experiment"
+    namespace = "com.ajailani.composeexperiment"
     compileSdk = 34
 
     defaultConfig {
