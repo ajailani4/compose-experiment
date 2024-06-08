@@ -1,4 +1,4 @@
-package com.ajailani.composeexperiment.ui.common.component
+package com.ajailani.composeexperiment.ui.screen.experiment
 
 import android.util.Log
 import androidx.compose.animation.core.Animatable
@@ -32,6 +32,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ajailani.composeexperiment.ui.common.component.VerticalGrid
 
 @Composable
 fun FlyingBoxScreen() {
