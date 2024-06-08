@@ -1,4 +1,4 @@
-package com.ajailani.composeexperiment.ui.common.component
+package com.ajailani.composeexperiment.ui.screen.experiment
 
 import android.util.Log
 import androidx.compose.foundation.Canvas
