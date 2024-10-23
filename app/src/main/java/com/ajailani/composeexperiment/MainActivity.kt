@@ -16,6 +16,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.ajailani.composeexperiment.ui.navigation.Navigation
+import com.ajailani.composeexperiment.ui.screen.experiment.ExperimentScreen
 import com.ajailani.composeexperiment.ui.theme.ComponentSlicingTheme
 import com.ajailani.composeexperiment.util.MixpanelUtil
 
@@ -40,20 +41,20 @@ class MainActivity : ComponentActivity() {
                 ) {
                     val navController = rememberNavController()
 //
-                    Navigation(navController)
+//                    Navigation(navController)
 
-//                    ExperimentScreen()
+                    ExperimentScreen()
                 }
             }
         }
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
 
-        if (NfcAdapter.ACTION_NDEF_DISCOVERED == intent?.action ||
-            NfcAdapter.ACTION_TECH_DISCOVERED == intent?.action ||
-            NfcAdapter.ACTION_TAG_DISCOVERED == intent?.action) {
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED == intent.action ||
+            NfcAdapter.ACTION_TECH_DISCOVERED == intent.action ||
+            NfcAdapter.ACTION_TAG_DISCOVERED == intent.action) {
             val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)
             Log.d("TAG", "Tag: $tag")
 
