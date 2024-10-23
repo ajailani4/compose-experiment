@@ -1,6 +1,7 @@
 package com.ajailani.composeexperiment.ui.screen.experiment
 
 import android.util.Log
+import androidx.compose.animation.core.exponentialDecay
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -101,6 +102,15 @@ private fun CustomBottomSheet(
     val density = LocalDensity.current
     val screenHeight = configuration.screenHeightDp.dp
     val halfOpenedContentHeight = remember { screenHeight * 0.3f }
+    val anchors = remember {
+        with(density) {
+            DraggableAnchors {
+                EXPANDED at 0f
+                HALF_OPENED at halfOpenedContentHeight.toPx()
+                BottomSheetState.COLLAPSED at screenHeight.toPx()
+            }
+        }
+    }
     val anchoredDraggableState = remember {
         AnchoredDraggableState(
             initialValue = state.value,
@@ -109,7 +119,8 @@ private fun CustomBottomSheet(
                 it * 0.5f
             },
             velocityThreshold = { with(density) { 100.dp.toPx() } },
-            animationSpec = tween()
+            snapAnimationSpec = tween(),
+            decayAnimationSpec = exponentialDecay()
         ).apply {
             with(density) {
                 updateAnchors(

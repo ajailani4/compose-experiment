@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ajailani.composeexperiment.ui.screen.ScreenshotTestScreen
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -26,14 +27,13 @@ fun ExperimentScreen() {
             value = creditCardNumber,
             setValue = { creditCardNumber = it }
         )*/
+        /* CustomTabRow { selectedTabIndex ->
+             when (selectedTabIndex) {
+                 0 -> Tab1Screen()
 
-       /* CustomTabRow { selectedTabIndex ->
-            when (selectedTabIndex) {
-                0 -> Tab1Screen()
-
-                1 -> Tab2Screen()
-            }
-        }*/
+                 1 -> Tab2Screen()
+             }
+         }*/
 
 //        LineChart(
 //            modifier = Modifier
@@ -47,12 +47,13 @@ fun ExperimentScreen() {
 //
 //        DrawingScreen()
 //        CustomFlowRow()
+//        ScreenshotTestScreen()
     }
 //    FloatingBoxScreen()
 //    NestedScrollScreen()
 //    StickySectionScreen()
 //    SwapCubeScreen()
-    FlyingBoxScreen()
+//    FlyingBoxScreen()
 }
 
 @Preview(showBackground = true)
