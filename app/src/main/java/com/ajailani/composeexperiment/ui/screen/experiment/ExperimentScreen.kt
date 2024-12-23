@@ -17,11 +17,11 @@ fun ExperimentScreen() {
 //     var creditCardNumber by remember { mutableStateOf("") }
 //    val context = LocalContext.current
 
-    Column(
+    /*Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp)
-    ) {
+    ) {*/
         /*CreditCardTextField(
             modifier = Modifier.fillMaxWidth(),
             value = creditCardNumber,
@@ -48,12 +48,13 @@ fun ExperimentScreen() {
 //        DrawingScreen()
 //        CustomFlowRow()
 //        ScreenshotTestScreen()
-    }
+//    }
 //    FloatingBoxScreen()
 //    NestedScrollScreen()
 //    StickySectionScreen()
 //    SwapCubeScreen()
 //    FlyingBoxScreen()
+    PdfViewerScreen()
 }
 
 @Preview(showBackground = true)

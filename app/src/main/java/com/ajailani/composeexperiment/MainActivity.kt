@@ -14,13 +14,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.fragment.app.FragmentActivity
 import androidx.navigation.compose.rememberNavController
 import com.ajailani.composeexperiment.ui.navigation.Navigation
 import com.ajailani.composeexperiment.ui.screen.experiment.ExperimentScreen
 import com.ajailani.composeexperiment.ui.theme.ComponentSlicingTheme
 import com.ajailani.composeexperiment.util.MixpanelUtil
 
-class MainActivity : ComponentActivity() {
+class MainActivity : FragmentActivity() {
     private var nfcAdapter: NfcAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
