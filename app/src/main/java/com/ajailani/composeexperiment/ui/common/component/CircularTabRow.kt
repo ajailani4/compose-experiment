@@ -9,7 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
@@ -24,10 +25,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.ajailani.composeexperiment.ui.theme.NoRippleTheme
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun CircularTabRow(
     content: @Composable (selectedTabIndex: Int) -> Unit
@@ -37,7 +37,7 @@ fun CircularTabRow(
     val coroutineScope = rememberCoroutineScope()
     val tabHeight = 47.dp
 
-    CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
+    CompositionLocalProvider(LocalRippleConfiguration provides null) {
         Box(modifier = Modifier.background(color = Color.Gray)) {
             TabRow(
                 modifier = Modifier
