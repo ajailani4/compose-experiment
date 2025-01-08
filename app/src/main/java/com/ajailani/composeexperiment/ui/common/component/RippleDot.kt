@@ -40,6 +40,7 @@ fun RippleDot() {
                     animationSpec = tween(durationMillis = 800)
                 )
             }
+
             launch {
                 animatableAlpha.animateTo(
                     targetValue = targetAlpha,
